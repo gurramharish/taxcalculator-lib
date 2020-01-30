@@ -1,5 +1,7 @@
 package com.hans.taxcalculator.utils;
 
+import com.hans.taxcalculator.TaxPeriod;
+
 import java.time.LocalDate;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -17,20 +19,23 @@ public class TaxUtils {
         return sb.toString();
     }
 
-    public static TaxPeriod getTaxPeriodByCountyAndPeriod(String countryCode, String taxPeriod) {
-        Pattern periodPattern = Pattern.compile("^\\d{4}-\\d{4}$");
-        Matcher m = periodPattern.matcher(taxPeriod);
+    /*public static TaxPeriod getTaxPeriodByCountyAndPeriod(String countryCode, String taxPeriod) {
         TaxPeriod period = TaxPeriod.UNKOWN;
-        if(m.matches()) {
-            String[] taxPeriodParts = taxPeriod.split("-");
-            StringBuilder periodBuilder = new StringBuilder(countryCode.toUpperCase()).append("_").append(taxPeriodParts[0])
-                    .append("_").append(taxPeriodParts[1]);
-            try {
-                period = TaxPeriod.valueOf(periodBuilder.toString());
-            } catch (IllegalArgumentException e) {
-                System.out.println("Period not found :: " + periodBuilder.toString());
+        if(taxPeriod != null && !taxPeriod.trim().equals("")) {
+            taxPeriod = taxPeriod.trim();
+            Pattern periodPattern = Pattern.compile("^\\d{4}-\\d{4}$");
+            Matcher m = periodPattern.matcher(taxPeriod);
+            if(m.matches()) {
+                String[] taxPeriodParts = taxPeriod.split("-");
+                StringBuilder periodBuilder = new StringBuilder(countryCode.toUpperCase()).append("_").append(taxPeriodParts[0])
+                        .append("_").append(taxPeriodParts[1]);
+                try {
+                    period = TaxPeriod.valueOf(periodBuilder.toString());
+                } catch (IllegalArgumentException e) {
+                    System.out.println("Period not found :: " + periodBuilder.toString());
+                }
             }
         }
         return period;
-    }
+    }*/
 }

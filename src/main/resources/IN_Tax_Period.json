@@ -1,0 +1,51 @@
+[{
+        "period": "2019-2020",
+        "taxSlabs": [{
+                "from": 0,
+                "to": 250000,
+                "taxPercentage": 0
+            },
+            {
+                "from": 250000,
+                "to": 500000,
+                "taxPercentage": 5
+            },
+            {
+                "from": 500000,
+                "to": 1000000,
+                "taxPercentage": 20
+            },
+            {
+                "from": 1000000,
+                "to": null,
+                "taxPercentage": 30
+            }
+        ],
+        "cess": 4
+    },
+    {
+        "period": "2020-2021",
+        "taxSlabs": [{
+                "from": 0,
+                "to": 250000,
+                "taxPercentage": 0
+            },
+            {
+                "from": 250000,
+                "to": 500000,
+                "taxPercentage": 5
+            },
+            {
+                "from": 500000,
+                "to": 1000000,
+                "taxPercentage": 20
+            },
+            {
+                "from": 1000000,
+                "to": null,
+                "taxPercentage": 30
+            }
+        ],
+        "cess": 4
+    }
+]
